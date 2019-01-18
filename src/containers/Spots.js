@@ -18,7 +18,7 @@ class Spots extends Component {
                     spots,
                     isLoading: false
                 });
-            }, 1000);
+            }, 500);
 
         });
     };
