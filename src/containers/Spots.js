@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import Spot from '../components/Spot';
 
 class Spots extends Component {
     state = {
@@ -33,15 +33,7 @@ class Spots extends Component {
                     <div className="row">
                     {
                         this.state.spots.map(spot => (
-                            <div className="card col-4" >
-                            <img className="card-img-top" src=".../100px180/" alt={spot.location}/>
-                            <div className="card-body">
-                            <h5 className="card-title">{spot.name}</h5>
-                            <p className="card-text">{spot.description}</p>
-                            <p className="card-text"><em>Accessibility Rating:</em> {spot.access_rating}</p>
-                            <Link to={`/spots/${spot.id}`} className="btn btn-primary">Accessibility</Link>
-                            </div>
-                        </div>
+                            <Spot key={spot.id} spot={spot} />
                     ))
                     }
                     </div>
