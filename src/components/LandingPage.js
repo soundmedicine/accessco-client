@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => (
     <div className="jumbotron">
@@ -7,7 +8,7 @@ const LandingPage = () => (
         <hr className="my-4"/>
         <p>Some of the facilities listed are built-up and maintained, some are naturally-occurring and unmaintained. This app also allows you to update information about existing records, as well as add information about establishments not listed.</p>
         <p className="lead">
-            <a className="btn btn-primary btn-lg" href="#" role="button">Search!</a>
+            <Link to="/spots" className="btn btn-primary btn-lg" href="#" role="button">Search!</Link>
         </p>
     </div>
 );
