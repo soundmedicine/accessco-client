@@ -7,6 +7,8 @@ import Header from './components/Header';
 import LandingPage from './components/LandingPage';
 import NotFound from './components/NotFound';
 
+import Spots from './containers/Spots';
+
 class App extends Component {
   render() {
     return (
@@ -15,9 +17,9 @@ class App extends Component {
       <main className="container">
       <Switch>
         <Route exact path="/" component={LandingPage} />
+        <Route path="/spots" component={Spots} />
 
 
-        
         <Route path="*" component={NotFound} />
         </Switch>
       </main>
