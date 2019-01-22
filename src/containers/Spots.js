@@ -25,14 +25,12 @@ class Spots extends Component {
     render() {
         return (
             <div>
-                <h1>Spot Search!</h1>
-                
                 { this.state.isLoading ? 
                     <h5>Loading spots ...</h5> : 
                     <div className="row">
                     {
                         this.state.spots.map(spot => (
-                            <Spot key={spot.id} spot={spot} cols="col-4"/>
+                            <Spot key={spot.id} spot={spot} cols="col-4" showEdit={false}/>
                     ))
                     }
                     </div>

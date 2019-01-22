@@ -9,6 +9,7 @@ import NotFound from './components/NotFound';
 
 import Spots from './containers/Spots';
 import ViewSpot from './containers/ViewSpot';
+import CreateSpot from './containers/CreateSpot';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
       <Switch>
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/spots" component={Spots} />
+        <Route exact path="/spots/create" component={CreateSpot} />
         <Route path="/spots/:id" component={ViewSpot} />
 
 
