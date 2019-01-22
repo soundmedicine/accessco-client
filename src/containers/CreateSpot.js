@@ -1,8 +1,25 @@
 import React, { Component } from 'react';
+import SpotForm from './SpotForm';
 
 class CreateSpot extends Component {
+    state = {
+        spot: {
+            name: '',
+            location: '',
+            description: '',
+            access_rating: 0,
+            url: ''
+        },
+        creating: false
+    };
+
     render() {
-        return <h1>Create Spot</h1>
+        return (
+            <div>
+                <h1>Create Spot</h1>
+                <SpotForm spot={this.state.spot}/>
+            </div>
+        ) 
     }
 }
 
