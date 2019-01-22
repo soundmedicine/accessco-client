@@ -11,7 +11,7 @@ class SpotForm extends Component {
                 <div className="form-group row">
                     <label htmlFor="name" className="col-sm-2 col-form-label">Name</label>
                     <div className="col-sm-10">
-                        <input type="text" className="form-control" id="name" placeholder="Enter a location name" required/>
+                        <input type="text" className="form-control" id="name" aria-describedby="location name" placeholder="Enter a location name" required/>
                     </div>
                 </div>
                 <div className="form-group">
