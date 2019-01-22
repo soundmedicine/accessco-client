@@ -8,6 +8,7 @@ import LandingPage from './components/LandingPage';
 import NotFound from './components/NotFound';
 
 import Spots from './containers/Spots';
+import ViewSpot from './containers/ViewSpot';
 
 class App extends Component {
   render() {
@@ -17,7 +18,8 @@ class App extends Component {
       <main className="container">
       <Switch>
         <Route exact path="/" component={LandingPage} />
-        <Route path="/spots" component={Spots} />
+        <Route exact path="/spots" component={Spots} />
+        <Route path="/spots/:id" component={ViewSpot} />
 
 
         <Route path="*" component={NotFound} />

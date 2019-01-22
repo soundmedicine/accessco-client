@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Spot from '../components/Spot';
+import { getAllSpots } from '../api';
 
 class Spots extends Component {
     state = {
@@ -8,9 +9,7 @@ class Spots extends Component {
     };
 
     componentDidMount() {
-        const API_URL = 'https://crud-springs-api.herokuapp.com/api/v1/springs';
-        fetch(API_URL)
-            .then(res => res.json())
+        getAllSpots()
             .then(spots => {
 
                 setTimeout(() => {
@@ -33,7 +32,7 @@ class Spots extends Component {
                     <div className="row">
                     {
                         this.state.spots.map(spot => (
-                            <Spot key={spot.id} spot={spot} />
+                            <Spot key={spot.id} spot={spot} cols="col-4"/>
                     ))
                     }
                     </div>
