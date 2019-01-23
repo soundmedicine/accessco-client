@@ -13,11 +13,15 @@ class CreateSpot extends Component {
         creating: false
     };
 
+    createSpot = (spot) => {
+        console.log('In create spot:', spot);
+    };
+    
     render() {
         return (
             <div>
                 <h1>Add a Spot</h1>
-                <SpotForm spot={this.state.spot}/>
+                <SpotForm onFormSubmitted={this.createSpot} spot={this.state.spot}/>
             </div>
         ) 
     }

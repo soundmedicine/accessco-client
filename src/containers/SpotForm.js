@@ -15,9 +15,23 @@ class SpotForm extends Component {
         }));
     };
 
+    validSpot = () => {
+        const { spot } = this.state;
+        const hasName = spot.name.trim() !== '';
+        const hasDescription = spot.description.trim() !== '';
+        const hasLocation = spot.location.trim() !== '';
+        const hasUrl = spot.location.trim() !== '';
+        const hasRating = spot.access_rating.trim() !== '';
+
+
+        return hasName && hasDescription && hasLocation && hasUrl && hasRating;
+    }
+
     formSubmitted = (event) => {
         event.preventDefault();
-        console.log(this.state.spot);
+        if(this.validSpot()) {
+            this.props.onFormSubmitted(this.state.spot);
+        }
     };
 
     render() {
@@ -38,12 +52,18 @@ class SpotForm extends Component {
                     <textarea onChange={this.valueChanged} type="text" className="form-control" name="description" id="description" placeholder="Tell us about this place!"/>
                 </div>
                 <div className="form-group">
+                    <label htmlFor="url">Website</label>
+                    <input onChange={this.valueChanged} type="url" className="form-control" name="url" id="url" placeholder="http://example.com/"/>
+                </div>
+                <div className="form-group">
                     <label htmlFor="image">Image</label>
                     <input onChange={this.valueChanged} type="url" className="form-control" name="image" id="image" placeholder="http://example.com/image.jpg"/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="access_rating">Accessibility Rating</label>
                     <select onChange={this.valueChanged} className="form-control" name="access_rating" id="access_rating">
+                    <option></option>
+                    <option>0</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
