@@ -16,7 +16,7 @@ class CreateSpot extends Component {
     render() {
         return (
             <div>
-                <h1>Create Spot</h1>
+                <h1>Add a Spot</h1>
                 <SpotForm spot={this.state.spot}/>
             </div>
         ) 

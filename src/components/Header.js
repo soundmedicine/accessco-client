@@ -10,7 +10,7 @@ const Header = () => (
                     <Link to="/spots" className="nav-link" href="#">View spots</Link>
                 </li>
                 <li className="nav=item">
-                    <Link to="/spots/create" className="nav-link" href="#">Create spot</Link>
+                    <Link to="/spots/create" className="nav-link" href="#">Add a spot</Link>
                 </li>
             </ul>
         </div>
