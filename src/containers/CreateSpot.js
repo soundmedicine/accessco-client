@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import SpotForm from './SpotForm';
+import { createSpot } from '../api';
 
 class CreateSpot extends Component {
     state = {
@@ -15,8 +17,16 @@ class CreateSpot extends Component {
 
     createSpot = (spot) => {
         console.log('In create spot:', spot);
+        this.setState({
+            creating: true
+        });
+        createSpot(spot)
+        .then(result => {
+            console.log(result.id);
+            this.props.history.push(`/spots/${result.id}`);
+        });
     };
-    
+
     render() {
         return (
             <div>
@@ -27,4 +37,4 @@ class CreateSpot extends Component {
     }
 }
 
-export default CreateSpot;
+export default withRouter(CreateSpot);
