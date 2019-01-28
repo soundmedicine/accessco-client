@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 
 class SpotForm extends Component {
     state = {
-        spot: {}
+        spot: {
+            name: '',
+            location: '',
+            description: '',
+            access_rating: 0,
+            url: ''
+        }
     };
 
     componentDidMount() {
@@ -30,7 +36,6 @@ class SpotForm extends Component {
         const hasLocation = spot.location.trim() !== '';
         const hasUrl = spot.location.trim() !== '';
         const hasRating = spot.access_rating.trim() !== '';
-
 
         return hasName && hasDescription && hasLocation && hasUrl && hasRating;
     }

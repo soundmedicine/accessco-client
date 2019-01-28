@@ -28,7 +28,6 @@ class ViewSpot extends Component {
                 <h2>Loading spot ... </h2> :
                 <Spot spot={this.state.spot} cols="col-12" showEdit={true} />
             
-    
     }
 }
 
