@@ -4,6 +4,14 @@ class SpotForm extends Component {
     state = {
         spot: {}
     };
+
+    componentDidMount() {
+        this.setState({
+            spot: {
+                ...this.props.spot
+            }
+        });
+    }
     
     valueChanged = (event) => {
         const { name, value } = event.target;
@@ -35,33 +43,34 @@ class SpotForm extends Component {
     };
 
     render() {
+        const { spot } = this.state;
         return (
             <form onSubmit={this.formSubmitted}>
                 <div className="form-group row">
                     <label htmlFor="name" className="col-sm-2 col-form-label">Name</label>
                     <div className="col-sm-10">
-                        <input onChange={this.valueChanged} type="text" className="form-control" name="name" id="name" aria-describedby="location name" placeholder="Enter a location name" required/>
+                        <input onChange={this.valueChanged} value={spot.title} type="text" className="form-control" name="name" id="name" aria-describedby="location name" placeholder="Enter a location name" required/>
                     </div>
                 </div>
                 <div className="form-group">
                     <label htmlFor="location">Location</label>
-                    <input onChange={this.valueChanged} type="text" className="form-control" name="location" id="location" aria-describedby="location" placeholder="Enter city, town or county"/>
+                    <input onChange={this.valueChanged} value={spot.location} type="text" className="form-control" name="location" id="location" aria-describedby="location" placeholder="Enter city, town or county"/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="description">Description</label>
-                    <textarea onChange={this.valueChanged} type="text" className="form-control" name="description" id="description" placeholder="Tell us about this place!"/>
+                    <textarea onChange={this.valueChanged} value={spot.description} type="text" className="form-control" name="description" id="description" placeholder="Tell us about this place!"/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="url">Website</label>
-                    <input onChange={this.valueChanged} type="url" className="form-control" name="url" id="url" placeholder="http://example.com/"/>
+                    <input onChange={this.valueChanged} value={spot.url} type="url" className="form-control" name="url" id="url" placeholder="http://example.com/"/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="image">Image</label>
-                    <input onChange={this.valueChanged} type="url" className="form-control" name="image" id="image" placeholder="http://example.com/image.jpg"/>
+                    <input onChange={this.valueChanged} value={spot.image} type="url" className="form-control" name="image" id="image" placeholder="http://example.com/image.jpg"/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="access_rating">Accessibility Rating</label>
-                    <select onChange={this.valueChanged} className="form-control" name="access_rating" id="access_rating">
+                    <select onChange={this.valueChanged} value={spot.access_rating} className="form-control" name="access_rating" id="access_rating">
                     <option></option>
                     <option>0</option>
                     <option>1</option>
