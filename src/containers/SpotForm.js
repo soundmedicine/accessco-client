@@ -51,7 +51,7 @@ class SpotForm extends Component {
         const { spot } = this.state;
         return (
             <form onSubmit={this.formSubmitted}>
-                <div className="form-group row">
+                <div className="form-group">
                     <label htmlFor="name" className="col-sm-2 col-form-label">Name</label>
                     <div className="col-sm-10">
                         <input onChange={this.valueChanged} value={spot.title} type="text" className="form-control" name="name" id="name" aria-describedby="location name" placeholder="Enter a location name" required/>
