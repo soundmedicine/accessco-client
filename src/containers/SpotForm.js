@@ -69,10 +69,10 @@ class SpotForm extends Component {
                     <label htmlFor="url">Website</label>
                     <input onChange={this.valueChanged} value={spot.url} type="url" className="form-control" name="url" id="url" placeholder="http://example.com/"/>
                 </div>
-                <div className="form-group">
+                {/* <div className="form-group">
                     <label htmlFor="image">Image</label>
                     <input onChange={this.valueChanged} value={spot.image} type="url" className="form-control" name="image" id="image" placeholder="http://example.com/image.jpg"/>
-                </div>
+                </div> */}
                 <div className="form-group">
                     <label htmlFor="access_rating">Accessibility Rating</label>
                     <select onChange={this.valueChanged} value={spot.access_rating} className="form-control" name="access_rating" id="access_rating">
